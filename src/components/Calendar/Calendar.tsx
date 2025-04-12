@@ -2,6 +2,7 @@
 import React from 'react';
 import CalendarHeader from './CalendarHeader';
 import TaskSidebar from './TaskSidebar';
+import WeekView from './WeekView';
 
 
 const Calendar: React.FC = () => {
@@ -10,6 +11,9 @@ const Calendar: React.FC = () => {
       <CalendarHeader />
       <div className="flex flex-1 overflow-hidden">
         <TaskSidebar />
+        <div className="flex-1 overflow-hidden border-l border-gray-200">
+          <WeekView />
+        </div>
       </div>
     </div>
   );
