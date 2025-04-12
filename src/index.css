@@ -1,0 +1,46 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .calendar-day {
+    @apply relative border-r border-gray-200 flex-1 min-w-[120px];
+  }
+  
+  .time-slot {
+    @apply border-b border-gray-200 h-12 relative;
+  }
+  
+  .time-label {
+    @apply text-xs text-gray-500 pr-2 -translate-y-1/2;
+  }
+  
+  .calendar-event {
+    @apply absolute left-1 right-1 px-2 py-1 rounded text-white text-xs overflow-hidden cursor-pointer z-10 shadow-md;
+  }
+  
+  .event-exercise {
+    @apply bg-green-500 hover:bg-green-600;
+  }
+  
+  .event-eating {
+    @apply bg-orange-500 hover:bg-orange-600;
+  }
+  
+  .event-work {
+    @apply bg-blue-500 hover:bg-blue-600;
+  }
+  
+  .event-relax {
+    @apply bg-purple-500 hover:bg-purple-600;
+  }
+  
+  .event-family {
+    @apply bg-pink-500 hover:bg-pink-600;
+  }
+  
+  .event-social {
+    @apply bg-yellow-500 hover:bg-yellow-600;
+  }
+}
