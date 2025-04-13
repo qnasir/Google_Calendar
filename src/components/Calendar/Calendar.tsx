@@ -3,6 +3,7 @@ import React from 'react';
 import CalendarHeader from './CalendarHeader';
 import TaskSidebar from './TaskSidebar';
 import WeekView from './WeekView';
+import EventModal from './EventModal';
 
 
 const Calendar: React.FC = () => {
@@ -15,6 +16,7 @@ const Calendar: React.FC = () => {
           <WeekView />
         </div>
       </div>
+      <EventModal />
     </div>
   );
 };
