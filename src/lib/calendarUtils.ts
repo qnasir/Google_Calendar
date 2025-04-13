@@ -65,7 +65,6 @@ export const calculateDragDeltas = (
   endY: number,
   dayWidth: number
 ): { dayDelta: number; minuteDelta: number } => {
-  // Calculate day change
   const dayDelta = Math.round((endX - startX) / dayWidth);
   
   const minuteDelta = Math.round((endY - startY) * 1.25);

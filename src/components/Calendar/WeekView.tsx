@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { getDaysOfWeek, getEventsForDay } from '@/lib/calendarUtils';
+import Event from './Event';
 import { openModal, createEventFromTask } from '@/store/calendarSlice';
 
 const hours = Array.from({ length: 24 }, (_, i) => i);
@@ -17,7 +18,7 @@ const WeekView: React.FC = () => {
     if (containerRef.current) {
       const now = new Date();
       const hour = now.getHours();
-      containerRef.current.scrollTop = hour * 48 - 100;
+      containerRef.current.scrollTop = hour * 48 - 100; 
     }
   };
   
@@ -41,13 +42,13 @@ const WeekView: React.FC = () => {
   const getDayWidth = (): number => {
     if (containerRef.current) {
       const calendarWidth = containerRef.current.clientWidth - 48; 
-      return calendarWidth / 7;
+      return calendarWidth / 7; 
     }
     return 0;
   };
   
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
+    e.preventDefault(); 
     e.dataTransfer.dropEffect = 'copy';
   };
   
@@ -103,6 +104,13 @@ const WeekView: React.FC = () => {
                 </div>
               ))}
               
+              {getEventsForDay(events, day).map((event) => (
+                <Event 
+                  key={event.id} 
+                  event={event} 
+                  dayWidth={getDayWidth()}
+                />
+              ))}
             </div>
           ))}
         </div>
